@@ -1,0 +1,461 @@
+/* ========================= */
+/* CONFIGURACIÓN GENERAL */
+/* ========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+:root{
+    --azul:#01578D;
+    --azul-sec:#0267A3;
+    --celeste:#00AEEF;
+    --celeste2:#1B75BC;
+    --blanco:#FFFFFF;
+    --gris:#666666;
+}
+
+body{
+
+    background:#FFFFFF;
+
+}
+/* ========================= */
+/* MENÚ */
+/* ========================= */
+
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:#FFFFFF;
+    box-shadow:0 4px 20px rgba(0,0,0,.08);
+    z-index:1000;
+}
+
+.navbar{
+
+    width:90%;
+    max-width:1200px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 0;
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+.logo img{
+    height:110px;
+    transition:.3s;
+}
+
+.logo img:hover{
+    transform:scale(1.05);
+}
+
+    color:white;
+
+    font-size:30px;
+
+    font-weight:bold;
+
+}
+
+.menu{
+
+    list-style:none;
+
+    display:flex;
+
+    gap:35px;
+
+}
+
+.menu a{
+
+    color:var(--azul);
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.menu a:hover{
+
+    color:var(--celeste);
+
+}
+
+/* ========================= */
+/* PORTADA */
+/* ========================= */
+
+.hero{
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+    padding:30px;
+
+    background:
+
+    linear-gradient(rgba(9,67,109,.80),rgba(9,67,109,.80)),
+
+    url("images/hero.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+}
+
+.hero h1{
+
+    font-size:65px;
+
+    margin-bottom:20px;
+
+}
+
+.hero p{
+
+    max-width:700px;
+
+    margin:auto;
+
+    font-size:22px;
+
+}
+
+.boton{
+
+    display:inline-block;
+
+    margin-top:40px;
+
+    background:#25D366;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:18px 35px;
+
+    border-radius:50px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.boton:hover{
+
+    background:#18b354;
+
+    transform:scale(1.05);
+
+}
+
+/* ========================= */
+/* SECCIONES */
+/* ========================= */
+
+section{
+
+    padding:90px 10%;
+
+}
+
+section h2{
+
+    text-align:center;
+
+    color:#09436d;
+
+    font-size:40px;
+
+    margin-bottom:30px;
+
+}
+
+section p{
+
+    max-width:900px;
+
+    margin:auto;
+
+    text-align:center;
+
+    font-size:18px;
+
+}
+
+/* ========================= */
+/* SERVICIOS */
+/* ========================= */
+
+.contenedor-servicios{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:30px;
+
+    margin-top:50px;
+
+}
+
+.servicio{
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:18px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.servicio:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.servicio h3{
+
+    color:#09436d;
+
+    margin-bottom:15px;
+
+}
+
+/* ========================= */
+/* PRODUCTOS */
+/* ========================= */
+
+.contenedor-productos{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:30px;
+
+    margin-top:50px;
+
+}
+
+.producto{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:50px 20px;
+
+    text-align:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.producto:hover{
+
+    transform:scale(1.05);
+
+}
+
+.producto h3{
+
+    color:#09436d;
+
+}
+
+/* ========================= */
+/* CONTACTO */
+/* ========================= */
+
+#contacto{
+
+    background:#09436d;
+
+    color:white;
+
+}
+
+#contacto h2{
+
+    color:white;
+
+}
+
+#contacto a{
+
+    color:#7fe6ff;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+}
+
+#contacto a:hover{
+
+    text-decoration:underline;
+
+}
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+
+footer{
+
+    background:#062d49;
+
+    color:white;
+
+    text-align:center;
+
+    padding:25px;
+
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media(max-width:900px){
+
+.menu{
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+.navbar{
+
+    flex-direction:column;
+
+}
+
+.hero h1{
+
+    font-size:42px;
+
+}
+
+.hero p{
+
+    font-size:18px;
+
+}
+
+section h2{
+
+    font-size:32px;
+
+}
+
+}
+
+.boton{
+
+    display:inline-block;
+
+    background:var(--azul);
+
+    color:white;
+
+    padding:18px 35px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.boton:hover{
+
+    background:var(--azul-sec);
+
+    transform:translateY(-3px);
+
+}
+
+.boton-secundario{
+
+    display:inline-block;
+
+    padding:18px 35px;
+
+    border:2px solid var(--azul);
+
+    color:var(--azul);
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.boton-secundario:hover{
+
+    background:var(--celeste);
+
+    color:white;
+
+}
+
+font-family:'Poppins',sans-serif;
