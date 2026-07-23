@@ -141,9 +141,35 @@ section {
 /* Botones centrados */
 .hero-botones {
     display: flex;
-    justify-content: center; 
-    gap: 15px;               
-    flex-wrap: wrap;
+    justify-content: center;   /* Centra horizontalmente */
+    gap: 20px;                 /* Espacio entre botones */
+    margin-top: 25px;
+    flex-wrap: wrap;           /* Permite que se acomoden en móviles */
+}
+
+.hero-botones a {
+    background-color: #09436D; /* Azul corporativo */
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.hero-botones a:hover {
+    background-color: #0b5a92; /* Azul más claro al pasar el mouse */
+}
+
+.hero-botones .boton-secundario {
+    background-color: #fff;
+    color: #09436D;
+    border: 2px solid #09436D;
+}
+
+.hero-botones .boton-secundario:hover {
+    background-color: #09436D;
+    color: #fff;
 }
 
 /* Colores de texto */
@@ -240,4 +266,16 @@ footer {
     .navbar .logo img {
         height: 60px; /* Logo más pequeño en móviles */
     }
+}
+
+.hero-imagen {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.hero-imagen img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
