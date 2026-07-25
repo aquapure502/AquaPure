@@ -1,240 +1,217 @@
 /*==================================================
                 AQUAPURE GUATEMALA
+                script.js
 ==================================================*/
 
-/*==========================================
-      MENÚ RESPONSIVE
-==========================================*/
+document.addEventListener("DOMContentLoaded", () => {
 
-const menuToggle = document.getElementById("menu-toggle");
-const menu = document.getElementById("menu");
+    /*==========================================
+            MENÚ RESPONSIVE
+    ==========================================*/
 
-if (menuToggle && menu) {
+    const menuToggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("menu");
 
-    menuToggle.addEventListener("click", () => {
+    if (menuToggle && menu) {
 
-        menu.classList.toggle("activo");
+        menuToggle.addEventListener("click", () => {
 
-    });
+            menu.classList.toggle("active");
 
-}
+            const icono = menuToggle.querySelector("i");
 
+            if (menu.classList.contains("active")) {
 
-/*==========================================
-      CERRAR MENÚ AL SELECCIONAR OPCIÓN
-==========================================*/
+                icono.classList.remove("fa-bars");
+                icono.classList.add("fa-xmark");
 
-document.querySelectorAll(".menu a").forEach(enlace => {
+            } else {
 
-    enlace.addEventListener("click", () => {
+                icono.classList.remove("fa-xmark");
+                icono.classList.add("fa-bars");
 
-        menu.classList.remove("activo");
+            }
 
-    });
+        });
 
-});
+        document.querySelectorAll(".menu a").forEach(link => {
 
+            link.addEventListener("click", () => {
 
-/*==========================================
-      SCROLL SUAVE
-==========================================*/
+                menu.classList.remove("active");
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                const icono = menuToggle.querySelector("i");
 
-    anchor.addEventListener("click", function (e) {
-
-        e.preventDefault();
-
-        const destino = document.querySelector(this.getAttribute("href"));
-
-        if(destino){
-
-            destino.scrollIntoView({
-
-                behavior: "smooth"
+                icono.classList.remove("fa-xmark");
+                icono.classList.add("fa-bars");
 
             });
 
-        }
+        });
 
-    });
+    }
 
-});
+    /*==========================================
+                HEADER SCROLL
+    ==========================================*/
 
+    const header = document.getElementById("header");
 
-/*==========================================
-      MOSTRAR PRODUCTOS
-==========================================*/
+    window.addEventListener("scroll", () => {
 
-function mostrarImagen(nombreArchivo){
+        if (window.scrollY > 60) {
 
-    const contenedor = document.getElementById("imagen-producto");
+            header.style.boxShadow = "0 10px 25px rgba(0,0,0,.10)";
+            header.style.background = "rgba(255,255,255,.98)";
 
-    contenedor.innerHTML = `
+        } else {
 
-        <div class="producto-detalle">
-
-            <img src="images/${nombreArchivo}" alt="Producto AquaPure">
-
-            <div class="detalle-producto">
-
-                <h3>Solicita más información</h3>
-
-                <p>
-
-                    Si deseas conocer precios,
-                    instalación o especificaciones
-                    técnicas de este equipo,
-                    contáctanos y uno de nuestros
-                    asesores te ayudará.
-
-                </p>
-
-                <a
-                href="https://wa.me/message/HGVGMG5HMFBRL1"
-                target="_blank"
-                class="btn btn-principal">
-
-                    Solicitar Información
-
-                </a>
-
-            </div>
-
-        </div>
-
-    `;
-
-    contenedor.scrollIntoView({
-
-        behavior:"smooth"
-
-    });
-
-}
-
-
-/*==========================================
-      ANIMACIÓN AL HACER SCROLL
-==========================================*/
-
-const elementos = document.querySelectorAll(
-
-".beneficio, .servicio, .card-producto, .nosotros, .mision-vision, .faq-item"
-
-);
-
-const observer = new IntersectionObserver(
-
-(entries)=>{
-
-    entries.forEach(entry=>{
-
-        if(entry.isIntersecting){
-
-            entry.target.classList.add("mostrar");
+            header.style.boxShadow = "0 5px 20px rgba(0,0,0,.05)";
+            header.style.background = "rgba(255,255,255,.95)";
 
         }
 
     });
 
-},
+    /*==========================================
+                    FAQ
+    ==========================================*/
 
-{
+    const preguntas = document.querySelectorAll(".faq-item");
 
-    threshold:0.15
+    preguntas.forEach(item => {
 
-}
+        const boton = item.querySelector(".faq-pregunta");
 
-);
+        boton.addEventListener("click", () => {
 
-elementos.forEach(elemento=>{
+            preguntas.forEach(faq => {
 
-    observer.observe(elemento);
+                if (faq !== item) {
 
-});
+                    faq.classList.remove("active");
 
+                }
 
-/*==========================================
-      FAQ
-==========================================*/
+            });
 
-const preguntas = document.querySelectorAll(".faq-pregunta");
+            item.classList.toggle("active");
 
-preguntas.forEach(pregunta=>{
-
-    pregunta.addEventListener("click",()=>{
-
-        const respuesta = pregunta.nextElementSibling;
-
-        respuesta.classList.toggle("abierta");
-
-        const signo = pregunta.querySelector("span");
-
-        if(respuesta.classList.contains("abierta")){
-
-            signo.textContent="-";
-
-        }
-
-        else{
-
-            signo.textContent="+";
-
-        }
+        });
 
     });
 
-});
+    /*==========================================
+        FORMULARIO -> WHATSAPP
+    ==========================================*/
 
+    const formulario = document.getElementById("formulario");
 
-/*==========================================
-      FORMULARIO
-==========================================*/
+    if (formulario) {
 
-const formulario = document.querySelector(".formulario");
+        formulario.addEventListener("submit", function (e) {
 
-if(formulario){
+            e.preventDefault();
 
-formulario.addEventListener("submit",(e)=>{
+            const nombre = document.getElementById("nombre").value.trim();
+            const telefono = document.getElementById("telefono").value.trim();
+            const correo = document.getElementById("correo").value.trim();
+            const equipo = document.getElementById("equipo").value;
+            const mensaje = document.getElementById("mensaje").value.trim();
 
-    e.preventDefault();
+            if (nombre === "" || telefono === "") {
 
-    alert(
+                alert("Por favor completa tu nombre y número de WhatsApp.");
 
-`¡Gracias por comunicarte con AquaPure!
+                return;
 
-Hemos recibido tu solicitud.
+            }
 
-Muy pronto uno de nuestros asesores se pondrá en contacto contigo.`
+            let texto =
 
-);
+`*NUEVA SOLICITUD DE COTIZACIÓN*%0A
+------------------------------------%0A
+👤 *Nombre:* ${nombre}%0A
+📱 *WhatsApp:* ${telefono}%0A
+📧 *Correo:* ${correo || "No proporcionado"}%0A
+💧 *Equipo de interés:* ${equipo}%0A
+📝 *Mensaje:* ${mensaje || "Sin comentarios"}%0A
+------------------------------------%0A
+Enviado desde la página web de AquaPure Guatemala.`;
 
-formulario.reset();
+            const url = `https://wa.me/50239856332?text=${texto}`;
 
-});
+            window.open(url, "_blank");
 
-}
+            formulario.reset();
 
+        });
 
-/*==========================================
-      HEADER AL HACER SCROLL
-==========================================*/
+    }
 
-window.addEventListener("scroll",()=>{
+    /*==========================================
+            SCROLL SUAVE
+    ==========================================*/
 
-const header=document.querySelector(".header");
+    document.querySelectorAll('a[href^="#"]').forEach(ancla => {
 
-if(window.scrollY>80){
+        ancla.addEventListener("click", function (e) {
 
-header.classList.add("scroll");
+            const destino = document.querySelector(this.getAttribute("href"));
 
-}
+            if (destino) {
 
-else{
+                e.preventDefault();
 
-header.classList.remove("scroll");
+                destino.scrollIntoView({
 
-}
+                    behavior: "smooth"
+
+                });
+
+            }
+
+        });
+
+    });
+
+    /*==========================================
+            ANIMACIÓN AL HACER SCROLL
+    ==========================================*/
+
+    const elementos = document.querySelectorAll(
+
+        ".beneficio, .servicio, .card-producto, .card-mision, .card-vision"
+
+    );
+
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+
+            }
+
+        });
+
+    }, {
+
+        threshold: .15
+
+    });
+
+    elementos.forEach(el => {
+
+        el.style.opacity = "0";
+        el.style.transform = "translateY(40px)";
+        el.style.transition = ".7s";
+
+        observer.observe(el);
+
+    });
 
 });

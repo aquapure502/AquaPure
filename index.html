@@ -3,61 +3,87 @@
 
 <head>
 
+    <!--==========================================
+                    CONFIGURACIÓN
+    ===========================================-->
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>AquaPure Guatemala | Confianza en cada gota</title>
 
     <meta name="description"
-        content="Soluciones profesionales para purificación de agua en Guatemala. Instalación, mantenimiento y venta de equipos para hogares, comercios e industrias.">
+          content="Venta, instalación y mantenimiento de sistemas profesionales para purificación de agua en Guatemala. Soluciones para hogares, comercios e industrias.">
 
     <meta name="keywords"
-        content="purificación de agua, filtros de agua, ósmosis inversa, ozono, filtro UV, Guatemala, AquaPure">
+          content="Purificadores de agua Guatemala, filtros de agua, ósmosis inversa, ozono, luz UV, AquaPure Guatemala">
 
-    <meta name="author" content="AquaPure Guatemala">
+    <meta name="author"
+          content="AquaPure Guatemala">
 
-    <link rel="icon" href="images/Logo2.jpeg">
+    <link rel="icon"
+          href="images/Logo2.jpeg">
 
-    <!-- Tipografía -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!--==========================================
+                    GOOGLE FONTS
+    ===========================================-->
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
 
-    <!-- Iconos -->
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!--==========================================
+                    FONT AWESOME
+    ===========================================-->
+
     <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+    <!--==========================================
+                    CSS
+    ===========================================-->
+
+    <link rel="stylesheet"
+          href="style.css">
 
 </head>
 
 <body>
 
-<!-- =====================================================
-     HEADER
-====================================================== -->
+<!--==========================================
+                HEADER
+===========================================-->
 
-<header class="header">
+<header class="header" id="header">
 
     <nav class="navbar">
 
+        <!-- Logo -->
+
         <a href="#inicio" class="logo">
 
-            <img src="images/Logo2.jpeg" alt="Logo AquaPure">
+            <img src="images/Logo2.jpeg"
+                 alt="Logo AquaPure Guatemala">
 
         </a>
 
-        <!-- Botón menú móvil -->
+        <!-- Botón menú -->
 
-        <div class="menu-toggle" id="menu-toggle">
+        <button class="menu-toggle"
+                id="menu-toggle"
+                aria-label="Abrir menú">
 
             <i class="fa-solid fa-bars"></i>
 
-        </div>
+        </button>
 
         <!-- Menú -->
 
@@ -71,7 +97,7 @@
 
             <li><a href="#productos">Productos</a></li>
 
-            <li><a href="#faq">Preguntas</a></li>
+            <li><a href="#faq">Preguntas Frecuentes</a></li>
 
             <li><a href="#contacto">Contacto</a></li>
 
@@ -80,57 +106,261 @@
     </nav>
 
 </header>
+<!--==================================================
+                    HERO
+===================================================-->
 
-<!-- =====================================================
-     HERO
-====================================================== -->
+<section class="hero" id="inicio">
 
-<section id="inicio" class="hero">
+    <div class="hero-contenedor">
 
-    <div class="hero-texto">
+        <!-- Información -->
 
-        <span class="hero-etiqueta">
+        <div class="hero-texto">
 
-            Agua pura para hogares, comercios e industrias
+            <span class="hero-etiqueta">
 
-        </span>
+                <i class="fa-solid fa-droplet"></i>
 
-        <h1>
+                Soluciones profesionales para purificación de agua
 
-            Confianza en cada gota
+            </span>
 
-        </h1>
+            <h1>
+
+                Agua pura para tu hogar, negocio e industria
+
+            </h1>
+
+            <p>
+
+                En AquaPure Guatemala ofrecemos soluciones integrales
+                en purificación de agua mediante equipos de alta calidad,
+                instalación profesional y mantenimiento especializado,
+                brindando confianza en cada gota.
+
+            </p>
+
+            <div class="hero-botones">
+
+                <a href="#contacto" class="btn btn-principal">
+
+                    <i class="fa-solid fa-file-circle-check"></i>
+
+                    Solicitar Cotización
+
+                </a>
+
+                <a href="#productos" class="btn btn-secundario">
+
+                    <i class="fa-solid fa-filter"></i>
+
+                    Ver Productos
+
+                </a>
+
+                <a href="https://wa.me/50239856332"
+                   target="_blank"
+                   class="btn btn-whatsapp">
+
+                    <i class="fa-brands fa-whatsapp"></i>
+
+                    WhatsApp
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Imagen -->
+
+        <div class="hero-imagen">
+
+            <img src="images/menu.png"
+                 class="hero-img"
+                 alt="Familia disfrutando agua purificada">
+
+        </div>
+
+    </div>
+
+</section>
+<!--==================================================
+            ¿POR QUÉ ELEGIR AQUAPURE?
+===================================================-->
+
+<section class="beneficios" id="beneficios">
+
+    <div class="titulo-seccion">
+
+        <span>¿POR QUÉ ELEGIR AQUAPURE?</span>
+
+        <h2>La confianza que tu agua necesita</h2>
 
         <p>
 
-            En AquaPure ofrecemos soluciones profesionales para la
-            purificación de agua mediante equipos de alta calidad,
-            instalación especializada y mantenimiento preventivo
-            para hogares, empresas e industrias en Guatemala.
+            Combinamos tecnología, experiencia y atención personalizada
+            para ofrecer soluciones de purificación de agua adaptadas
+            a cada necesidad.
 
         </p>
 
-        <div class="hero-botones">
+    </div>
+
+    <div class="contenedor-beneficios">
+
+        <article class="beneficio">
+
+            <div class="beneficio-icono">
+                <i class="fa-solid fa-droplet"></i>
+            </div>
+
+            <h3>Agua de Alta Calidad</h3>
+
+            <p>
+                Equipos con tecnologías modernas que mejoran la calidad
+                del agua para consumo diario.
+            </p>
+
+        </article>
+
+        <article class="beneficio">
+
+            <div class="beneficio-icono">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+            </div>
+
+            <h3>Instalación Profesional</h3>
+
+            <p>
+                Personal capacitado para garantizar una instalación
+                segura y el máximo rendimiento del equipo.
+            </p>
+
+        </article>
+
+        <article class="beneficio">
+
+            <div class="beneficio-icono">
+                <i class="fa-solid fa-shield-heart"></i>
+            </div>
+
+            <h3>Garantía y Respaldo</h3>
+
+            <p>
+                Acompañamiento antes, durante y después de la compra,
+                brindando confianza en cada proyecto.
+            </p>
+
+        </article>
+
+        <article class="beneficio">
+
+            <div class="beneficio-icono">
+                <i class="fa-solid fa-headset"></i>
+            </div>
+
+            <h3>Atención Personalizada</h3>
+
+            <p>
+                Analizamos tus necesidades para recomendar la mejor
+                solución para tu hogar, comercio o industria.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+<!--==================================================
+                    NOSOTROS
+===================================================-->
+
+<section class="nosotros" id="nosotros">
+
+    <div class="nosotros-contenedor">
+
+        <!-- Imagen -->
+
+        <div class="nosotros-imagen">
+
+            <img src="images/nosotros.jpeg"
+                 alt="AquaPure Guatemala">
+
+        </div>
+
+        <!-- Texto -->
+
+        <div class="nosotros-texto">
+
+            <span>¿QUIÉNES SOMOS?</span>
+
+            <h2>
+
+                Especialistas en soluciones para purificación de agua
+
+            </h2>
+
+            <p>
+
+                En <strong>AquaPure Guatemala</strong> trabajamos para ofrecer
+                soluciones confiables de purificación de agua para hogares,
+                comercios e industrias. Nuestro compromiso es brindar equipos
+                de alta calidad, instalación profesional y acompañamiento
+                permanente a nuestros clientes.
+
+            </p>
+
+            <p>
+
+                Creemos que el acceso a agua de calidad mejora la salud y el
+                bienestar, por eso ofrecemos asesoría personalizada para
+                encontrar el sistema ideal para cada necesidad.
+
+            </p>
+
+            <div class="nosotros-lista">
+
+                <div class="item-nosotros">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <span>Asesoría personalizada.</span>
+
+                </div>
+
+                <div class="item-nosotros">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <span>Instalación profesional.</span>
+
+                </div>
+
+                <div class="item-nosotros">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <span>Mantenimiento preventivo y correctivo.</span>
+
+                </div>
+
+                <div class="item-nosotros">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <span>Equipos de alta calidad.</span>
+
+                </div>
+
+            </div>
 
             <a href="#contacto" class="btn btn-principal">
 
-                Solicitar Cotización
+                <i class="fa-solid fa-comments"></i>
 
-            </a>
-
-            <a href="#productos" class="btn btn-secundario">
-
-                Ver Productos
-
-            </a>
-
-            <a href="https://wa.me/message/HGVGMG5HMFBRL1"
-                target="_blank"
-                class="btn btn-whatsapp">
-
-                <i class="fa-brands fa-whatsapp"></i>
-
-                WhatsApp
+                Hablar con un asesor
 
             </a>
 
@@ -138,191 +368,35 @@
 
     </div>
 
-    <div class="hero-imagen">
-
-        <img src="images/menu.png"
-            alt="Familia disfrutando agua purificada">
-
-    </div>
-
 </section>
-
-<!-- =====================================================
-     BENEFICIOS
-====================================================== -->
-
-<div class="titulo-seccion">
-
-    <span>¿POR QUÉ ELEGIR AQUAPURE?</span>
-
-    <h2>Beneficios de trabajar con nosotros</h2>
-
-    <p>
-        Ofrecemos soluciones confiables para que disfrutes agua de la mejor calidad con respaldo profesional.
-    </p>
-
-</div>
-
-    <div class="beneficio">
-
-        <i class="fa-solid fa-droplet"></i>
-
-        <h3>
-
-            Agua de Alta Calidad
-
-        </h3>
-
-        <p>
-
-            Equipos diseñados para mejorar la calidad del agua
-            mediante tecnologías modernas de purificación.
-
-        </p>
-
-    </div>
-
-    <div class="beneficio">
-
-        <i class="fa-solid fa-screwdriver-wrench"></i>
-
-        <h3>
-
-            Instalación Profesional
-
-        </h3>
-
-        <p>
-
-            Nuestro equipo realiza instalaciones seguras y con
-            los más altos estándares de calidad.
-
-        </p>
-
-    </div>
-
-    <div class="beneficio">
-
-        <i class="fa-solid fa-shield-heart"></i>
-
-        <h3>
-
-            Garantía
-
-        </h3>
-
-        <p>
-
-            Trabajamos con equipos confiables y ofrecemos
-            respaldo durante todo el proceso.
-
-        </p>
-
-    </div>
-
-    <div class="beneficio">
-
-        <i class="fa-solid fa-headset"></i>
-
-        <h3>
-
-            Atención Personalizada
-
-        </h3>
-
-        <p>
-
-            Asesoramos cada proyecto para recomendar la mejor
-            solución según las necesidades del cliente.
-
-        </p>
-
-    </div>
-
-</section>
-
-<!-- =====================================================
-     NOSOTROS
-====================================================== -->
-
-<section id="nosotros" class="nosotros">
-
-    <div class="nosotros-imagen">
-
-        <img src="images/nosotros.jpeg"
-            alt="AquaPure Guatemala">
-
-    </div>
-
-    <div class="nosotros-texto">
-
-        <span>
-
-            ¿QUIÉNES SOMOS?
-
-        </span>
-
-        <h2>
-
-            Soluciones profesionales para la purificación de agua
-
-        </h2>
-
-        <p>
-
-            En AquaPure Guatemala trabajamos para brindar
-            soluciones confiables en purificación de agua,
-            ofreciendo instalación, mantenimiento y asesoría
-            especializada para hogares, comercios e industrias.
-
-        </p>
-
-        <p>
-
-            Nuestro compromiso es proporcionar agua de mejor
-            calidad mediante tecnologías eficientes, atención
-            personalizada y un servicio profesional que genere
-            confianza en cada proyecto.
-
-        </p>
-
-        <a href="#contacto" class="btn btn-principal">
-
-            Hablar con un Asesor
-
-        </a>
-
-    </div>
-
-</section>
-
-<!-- =====================================================
-     SERVICIOS
-====================================================== -->
-
-<section id="servicios" class="servicios">
+<!--==================================================
+                    SERVICIOS
+===================================================-->
+
+<section class="servicios" id="servicios">
 
     <div class="titulo-seccion">
 
-        <span>
+        <span>NUESTROS SERVICIOS</span>
 
-            NUESTROS SERVICIOS
+        <h2>Soluciones integrales para el cuidado de tu agua</h2>
 
-        </span>
+        <p>
 
-        <h2>
+            Te acompañamos desde la asesoría inicial hasta el mantenimiento
+            de tus equipos, garantizando un servicio confiable y de calidad.
 
-            Todo lo que necesitas para obtener agua de calidad
-
-        </h2>
+        </p>
 
     </div>
 
     <div class="contenedor-servicios">
 
-              <div class="servicio">
+        <!-- Servicio 1 -->
 
-            <div class="icono">
+        <article class="servicio">
+
+            <div class="icono-servicio">
 
                 <i class="fa-solid fa-screwdriver-wrench"></i>
 
@@ -331,16 +405,20 @@
             <h3>Instalación Profesional</h3>
 
             <p>
-                Instalamos sistemas de purificación para hogares,
-                comercios e industrias, garantizando un funcionamiento
-                seguro y eficiente.
+
+                Instalamos equipos de purificación para hogares,
+                comercios e industrias siguiendo altos estándares
+                de calidad.
+
             </p>
 
-        </div>
+        </article>
 
-        <div class="servicio">
+        <!-- Servicio 2 -->
 
-            <div class="icono">
+        <article class="servicio">
+
+            <div class="icono-servicio">
 
                 <i class="fa-solid fa-gears"></i>
 
@@ -349,32 +427,41 @@
             <h3>Mantenimiento</h3>
 
             <p>
-                Realizamos mantenimiento preventivo y correctivo
-                para prolongar la vida útil de tus equipos.
+
+                Servicio preventivo y correctivo para mantener
+                el máximo rendimiento y prolongar la vida útil
+                de cada equipo.
+
             </p>
 
-        </div>
+        </article>
 
-        <div class="servicio">
+        <!-- Servicio 3 -->
 
-            <div class="icono">
+        <article class="servicio">
 
-                <i class="fa-solid fa-microscope"></i>
+            <div class="icono-servicio">
+
+                <i class="fa-solid fa-flask"></i>
 
             </div>
 
-            <h3>Diagnóstico Técnico</h3>
+            <h3>Diagnóstico del Agua</h3>
 
             <p>
-                Evaluamos la calidad del agua y recomendamos
-                la mejor solución para cada necesidad.
+
+                Evaluamos las características del agua para
+                recomendar la solución de purificación más adecuada.
+
             </p>
 
-        </div>
+        </article>
 
-        <div class="servicio">
+        <!-- Servicio 4 -->
 
-            <div class="icono">
+        <article class="servicio">
+
+            <div class="icono-servicio">
 
                 <i class="fa-solid fa-filter-circle-dollar"></i>
 
@@ -383,34 +470,35 @@
             <h3>Venta de Equipos</h3>
 
             <p>
-                Contamos con equipos certificados,
-                accesorios y repuestos para diferentes aplicaciones.
+
+                Contamos con equipos, accesorios y repuestos
+                para aplicaciones residenciales, comerciales
+                e industriales.
+
             </p>
 
-        </div>
+        </article>
 
     </div>
 
 </section>
+<!--==================================================
+                    PRODUCTOS
+===================================================-->
 
-<!-- =====================================================
-     PRODUCTOS
-====================================================== -->
-
-<section id="productos" class="productos">
+<section class="productos" id="productos">
 
     <div class="titulo-seccion">
 
         <span>NUESTROS PRODUCTOS</span>
 
-        <h2>
-            Equipos para cada necesidad
-        </h2>
+        <h2>Equipos para cada necesidad</h2>
 
         <p>
 
-            Conoce nuestra línea de soluciones profesionales
-            para obtener agua más limpia y segura.
+            Descubre nuestra línea de equipos diseñados para ofrecer
+            agua más limpia, segura y de excelente calidad para hogares,
+            comercios e industrias.
 
         </p>
 
@@ -418,200 +506,242 @@
 
     <div class="contenedor-productos">
 
-        <div class="card-producto">
+        <!-- ÓSMOSIS -->
+
+        <article class="card-producto">
 
             <img src="images/osmosis.png" alt="Ósmosis Inversa">
 
             <h3>Ósmosis Inversa</h3>
 
             <p>
-
-                Ideal para hogares, oficinas y negocios
-                que buscan agua de excelente calidad.
-
+                Ideal para hogares y oficinas que buscan agua de máxima pureza.
             </p>
 
-            <button onclick="mostrarImagen('osmosis.png')">
+            <a href="https://wa.me/message/HGVGMG5HMFBRL1?text=Hola,%20me%20interesa%20el%20equipo%20Ósmosis%20Inversa."
+               target="_blank"
+               class="btn btn-principal">
 
-                Más información
+                <i class="fa-brands fa-whatsapp"></i>
 
-            </button>
+                Solicitar Información
 
-        </div>
+            </a>
 
-        <div class="card-producto">
+        </article>
+
+        <!-- OZONO ACRÍLICO -->
+
+        <article class="card-producto">
 
             <img src="images/acrilico.png" alt="Ozono Acrílico">
 
             <h3>Ozono Acrílico</h3>
 
             <p>
-
-                Tecnología de ozono para desinfección
-                de agua, alimentos y superficies.
-
+                Desinfecta agua, frutas, verduras y superficies mediante ozono.
             </p>
 
-            <button onclick="mostrarImagen('acrilico.png')">
+            <a href="https://wa.me/message/HGVGMG5HMFBRL1?text=Hola,%20me%20interesa%20el%20Ozono%20Acrílico."
+               target="_blank"
+               class="btn btn-principal">
 
-                Más información
+                <i class="fa-brands fa-whatsapp"></i>
 
-            </button>
+                Solicitar Información
 
-        </div>
+            </a>
 
-        <div class="card-producto">
+        </article>
 
-            <img src="images/ozono.png" alt="Ozono Vitro">
+        <!-- OZONO VITRO -->
+
+        <article class="card-producto">
+
+            <img src="images/Vitro.png" alt="Ozono Vitro">
 
             <h3>Ozono Vitro</h3>
 
             <p>
-
-                Equipo compacto para una desinfección
-                eficiente mediante ozono.
-
+                Equipo compacto para una desinfección rápida y eficiente.
             </p>
 
-            <button onclick="mostrarImagen('ozono.png')">
+            <a href="https://wa.me/message/HGVGMG5HMFBRL1?text=Hola,%20me%20interesa%20el%20Ozono%20Vitro."
+               target="_blank"
+               class="btn btn-principal">
 
-                Más información
+                <i class="fa-brands fa-whatsapp"></i>
 
-            </button>
+                Solicitar Información
 
-        </div>
+            </a>
 
-        <div class="card-producto">
+        </article>
+
+        <!-- UV -->
+
+        <article class="card-producto">
 
             <img src="images/Uv.png" alt="Filtro UV">
 
             <h3>Filtro UV</h3>
 
             <p>
-
-                Elimina microorganismos utilizando
-                tecnología de luz ultravioleta.
-
+                Elimina bacterias y microorganismos mediante luz ultravioleta.
             </p>
 
-            <button onclick="mostrarImagen('Uv.png')">
+            <a href="https://wa.me/message/HGVGMG5HMFBRL1?text=Hola,%20me%20interesa%20el%20Filtro%20UV."
+               target="_blank"
+               class="btn btn-principal">
 
-                Más información
+                <i class="fa-brands fa-whatsapp"></i>
 
-            </button>
+                Solicitar Información
 
-        </div>
+            </a>
 
-        <div class="card-producto">
+        </article>
+
+        <!-- INDUSTRIAL -->
+
+        <article class="card-producto">
 
             <img src="images/Industrial.png" alt="Filtros Industriales">
 
             <h3>Filtros Industriales</h3>
 
             <p>
-
-                Soluciones para empresas,
-                comercios y procesos industriales.
-
+                Soluciones de alto rendimiento para empresas e industrias.
             </p>
 
-            <button onclick="mostrarImagen('Industrial.png')">
+            <a href="https://wa.me/message/HGVGMG5HMFBRL1?text=Hola,%20me%20interesan%20los%20Filtros%20Industriales."
+               target="_blank"
+               class="btn btn-principal">
 
-                Más información
+                <i class="fa-brands fa-whatsapp"></i>
 
-            </button>
+                Solicitar Información
 
-        </div>
+            </a>
 
-        <div class="card-producto">
+        </article>
 
-            <img src="images/Purificadora.png" alt="Purificadora">
+        <!-- PURIFICADORA -->
+
+        <article class="card-producto">
+
+            <img src="images/Purificadora.png" alt="Purificadora de Agua">
 
             <h3>Purificadora de Agua</h3>
 
             <p>
+                Equipos profesionales para obtener agua potable de excelente calidad.
+            </p>
 
-                Equipos completos para purificación
-                profesional de agua potable.
+            <a href="https://wa.me/message/HGVGMG5HMFBRL1?text=Hola,%20me%20interesa%20la%20Purificadora%20de%20Agua."
+               target="_blank"
+               class="btn btn-principal">
+
+                <i class="fa-brands fa-whatsapp"></i>
+
+                Solicitar Información
+
+            </a>
+
+        </article>
+
+    </div>
+
+</section>
+<!--==================================================
+                MISIÓN Y VISIÓN
+===================================================-->
+
+<section class="mision-vision" id="empresa">
+
+    <div class="titulo-seccion">
+
+        <span>NUESTRA EMPRESA</span>
+
+        <h2>Comprometidos con la calidad del agua</h2>
+
+        <p>
+
+            Trabajamos cada día para ofrecer soluciones confiables,
+            innovadoras y de alta calidad que mejoren la vida de
+            nuestros clientes.
+
+        </p>
+
+    </div>
+
+    <div class="contenedor-mision-vision">
+
+        <!-- MISIÓN -->
+
+        <article class="card-mision">
+
+            <div class="icono-mision">
+
+                <i class="fa-solid fa-bullseye"></i>
+
+            </div>
+
+            <h3>Misión</h3>
+
+            <p>
+
+                Brindar soluciones profesionales para la purificación
+                de agua mediante equipos de alta calidad,
+                instalación especializada y mantenimiento,
+                ofreciendo un servicio cercano y confiable.
 
             </p>
 
-            <button onclick="mostrarImagen('Purificadora.png')">
+        </article>
 
-                Más información
+        <!-- VISIÓN -->
 
-            </button>
+        <article class="card-vision">
 
-        </div>
+            <div class="icono-vision">
 
-    </div>
+                <i class="fa-solid fa-eye"></i>
 
-    <div id="imagen-producto" class="imagen-producto"></div>
+            </div>
 
-</section>
+            <h3>Visión</h3>
 
-<!-- =====================================================
-     MISIÓN Y VISIÓN
-====================================================== -->
+            <p>
 
-<section class="mision-vision">
+                Ser una empresa referente en Guatemala por la calidad
+                de nuestros productos, la innovación tecnológica
+                y la satisfacción de nuestros clientes.
 
-    <div class="card-mision">
+            </p>
 
-        <i class="fa-solid fa-bullseye"></i>
-
-        <h2>Misión</h2>
-
-        <p>
-
-            Brindar confianza mediante soluciones
-            profesionales para la purificación de agua,
-            ofreciendo productos y servicios de alta calidad
-            que mejoren la calidad de vida de nuestros clientes.
-
-        </p>
-
-    </div>
-
-    <div class="card-vision">
-
-        <i class="fa-solid fa-eye"></i>
-
-        <h2>Visión</h2>
-
-        <p>
-
-            Ser la empresa líder en soluciones
-            de purificación de agua en Centroamérica,
-            reconocida por nuestra innovación,
-            calidad y servicio al cliente.
-
-        </p>
+        </article>
 
     </div>
 
 </section>
 
-<!-- =====================================================
-     FORMULARIO
-====================================================== -->
+<!--==================================================
+                CONTACTO
+===================================================-->
 
-<section id="contacto" class="contacto">
+<section class="contacto" id="contacto">
 
     <div class="titulo-seccion">
 
         <span>CONTACTO</span>
 
-        <h2>
-
-            Solicita una Cotización
-
-        </h2>
+        <h2>Solicita una Cotización</h2>
 
         <p>
 
-            Completa el formulario y un asesor
-            se comunicará contigo lo antes posible.
+            Completa el formulario y recibirás atención personalizada
+            por medio de WhatsApp.
 
         </p>
 
@@ -619,79 +749,52 @@
 
     <div class="contenedor-contacto">
 
-        <form class="formulario">
+        <form class="formulario" id="formulario">
 
-                      <div class="grupo-formulario">
+            <div class="grupo-formulario">
+
+                <label for="nombre">Nombre</label>
 
                 <input
+                    id="nombre"
                     type="text"
-                    placeholder="Nombre Completo"
                     required>
 
             </div>
 
             <div class="grupo-formulario">
 
+                <label for="telefono">WhatsApp</label>
+
                 <input
+                    id="telefono"
                     type="tel"
-                    placeholder="WhatsApp"
                     required>
 
             </div>
 
             <div class="grupo-formulario">
 
+                <label for="correo">Correo</label>
+
                 <input
-                    type="email"
-                    placeholder="Correo Electrónico">
+                    id="correo"
+                    type="email">
 
             </div>
 
             <div class="grupo-formulario">
 
-                <select required>
+                <label for="equipo">Equipo de interés</label>
 
-                    <option value="">Departamento</option>
-
-                    <option>Guatemala</option>
-                    <option>Sacatepéquez</option>
-                    <option>Escuintla</option>
-                    <option>Chimaltenango</option>
-                    <option>Quetzaltenango</option>
-                    <option>Petén</option>
-                    <option>Alta Verapaz</option>
-                    <option>Baja Verapaz</option>
-                    <option>Izabal</option>
-                    <option>Retalhuleu</option>
-                    <option>Suchitepéquez</option>
-                    <option>San Marcos</option>
-                    <option>Huehuetenango</option>
-                    <option>Jutiapa</option>
-                    <option>Jalapa</option>
-                    <option>Santa Rosa</option>
-                    <option>Totonicapán</option>
-                    <option>Sololá</option>
-                    <option>Zacapa</option>
-                    <option>Chiquimula</option>
-                    <option>El Progreso</option>
-                    <option>Quiché</option>
-
-                </select>
-
-            </div>
-
-            <div class="grupo-formulario">
-
-                <select>
-
-                    <option value="">Equipo de interés</option>
+                <select id="equipo">
 
                     <option>Ósmosis Inversa</option>
                     <option>Ozono Acrílico</option>
                     <option>Ozono Vitro</option>
                     <option>Filtro UV</option>
                     <option>Filtros Industriales</option>
-                    <option>Purificadora de Agua</option>
+                    <option>Purificadora</option>
                     <option>No estoy seguro</option>
 
                 </select>
@@ -700,13 +803,19 @@
 
             <div class="grupo-formulario">
 
+                <label for="mensaje">Mensaje</label>
+
                 <textarea
-                    rows="6"
-                    placeholder="Cuéntanos cómo podemos ayudarte..."></textarea>
+                    id="mensaje"
+                    rows="6"></textarea>
 
             </div>
 
-            <button type="submit" class="btn btn-principal">
+            <button
+                class="btn btn-principal"
+                type="submit">
+
+                <i class="fa-brands fa-whatsapp"></i>
 
                 Solicitar Cotización
 
@@ -717,113 +826,103 @@
     </div>
 
 </section>
+<!--==================================================
+                PREGUNTAS FRECUENTES
+===================================================-->
 
-<!-- =====================================================
-                    PREGUNTAS FRECUENTES
-====================================================== -->
-
-<section id="faq" class="faq">
+<section class="faq" id="faq">
 
     <div class="titulo-seccion">
 
         <span>PREGUNTAS FRECUENTES</span>
 
-        <h2>
+        <h2>Resolvemos tus dudas</h2>
 
-            Resolvemos tus dudas
-
-        </h2>
+        <p>
+            Selecciona una pregunta para ver la respuesta.
+        </p>
 
     </div>
 
-    <div class="faq-item">
+    <div class="faq-contenedor">
 
-        <button class="faq-pregunta">
+        <div class="faq-item active">
 
-            ¿Qué equipo necesito para mi hogar?
+            <button class="faq-pregunta">
 
-            <span>+</span>
+                <span>¿Qué equipo necesito para mi hogar?</span>
 
-        </button>
+                <i class="fa-solid fa-plus"></i>
 
-        <div class="faq-respuesta">
+            </button>
 
-            <p>
+            <div class="faq-respuesta">
 
-                Nuestro equipo puede asesorarte para elegir el
-                sistema de purificación ideal según el consumo,
-                calidad del agua y número de personas.
+                <p>
+                    Nuestro equipo te asesora para recomendar el sistema más adecuado según el consumo de agua y las necesidades de tu familia.
+                </p>
 
-            </p>
+            </div>
 
         </div>
 
-    </div>
+        <div class="faq-item">
 
-    <div class="faq-item">
+            <button class="faq-pregunta">
 
-        <button class="faq-pregunta">
+                <span>¿Realizan instalación?</span>
 
-            ¿Realizan instalación?
+                <i class="fa-solid fa-plus"></i>
 
-            <span>+</span>
+            </button>
 
-        </button>
+            <div class="faq-respuesta">
 
-        <div class="faq-respuesta">
+                <p>
+                    Sí. Contamos con personal capacitado para instalar todos nuestros equipos.
+                </p>
 
-            <p>
-
-                Sí. Todos nuestros equipos pueden ser
-                instalados por personal especializado.
-
-            </p>
+            </div>
 
         </div>
 
-    </div>
+        <div class="faq-item">
 
-    <div class="faq-item">
+            <button class="faq-pregunta">
 
-        <button class="faq-pregunta">
+                <span>¿Ofrecen mantenimiento?</span>
 
-            ¿Ofrecen mantenimiento?
+                <i class="fa-solid fa-plus"></i>
 
-            <span>+</span>
+            </button>
 
-        </button>
+            <div class="faq-respuesta">
 
-        <div class="faq-respuesta">
+                <p>
+                    Sí. Realizamos mantenimiento preventivo, correctivo y cambio de filtros.
+                </p>
 
-            <p>
-
-                Sí. Contamos con mantenimiento preventivo,
-                correctivo y cambio de filtros.
-
-            </p>
+            </div>
 
         </div>
 
-    </div>
+        <div class="faq-item">
 
-    <div class="faq-item">
+            <button class="faq-pregunta">
 
-        <button class="faq-pregunta">
+                <span>¿Atienden empresas e industrias?</span>
 
-            ¿Atienden empresas?
+                <i class="fa-solid fa-plus"></i>
 
-            <span>+</span>
+            </button>
 
-        </button>
+            <div class="faq-respuesta">
 
-        <div class="faq-respuesta">
+                <p>
+                    Sí. Tenemos soluciones para hogares, comercios, hoteles e industrias.
+                </p>
 
-            <p>
-
-                Sí. Diseñamos soluciones para hogares,
-                oficinas, comercios e industrias.
-
-            </p>
+            </div>
 
         </div>
 
@@ -831,83 +930,55 @@
 
 </section>
 
-<!-- =====================================================
-                       FOOTER
-====================================================== -->
+<!--==================================================
+                    FOOTER
+===================================================-->
 
-<footer>
+<footer class="footer">
 
     <div class="footer-contenedor">
 
         <div class="footer-logo">
 
-            <img src="images/logo.png" alt="AquaPure">
-
-            <p>
-
-                Confianza en cada gota.
-
-            </p>
+            <img src="images/Logo2.jpeg"
+                 alt="AquaPure Guatemala">
 
         </div>
 
-        <div class="footer-contacto">
+        <div class="footer-columna">
 
             <h3>Contacto</h3>
 
-            <p>
+            <p><i class="fa-solid fa-phone"></i> +502 3985-6332</p>
 
-                <i class="fa-solid fa-phone"></i>
+            <p><i class="fa-solid fa-envelope"></i> aquapure502@gmail.com</p>
 
-                3985-6332
-
-            </p>
-
-            <p>
-
-                <i class="fa-solid fa-envelope"></i>
-
-                aquapure502@gmail.com
-
-            </p>
-
-            <p>
-
-                <i class="fa-brands fa-facebook"></i>
-
-                AquaPure Guatemala
-
-            </p>
+            <p><i class="fa-brands fa-facebook-f"></i> AquaPure Guatemala</p>
 
         </div>
 
-        <div class="footer-horario">
+        <div class="footer-columna">
 
             <h3>Horario</h3>
 
-            <p>
+            <p>Lunes a Viernes</p>
 
-                Lunes a Viernes
+            <p>08:00 AM - 05:00 PM</p>
 
-            </p>
+            <p>Sábado</p>
 
-            <p>
+            <p>08:00 AM - 12:00 PM</p>
 
-                8:00 AM - 5:00 PM
+        </div>
 
-            </p>
+        <div class="footer-columna">
 
-            <p>
+            <h3>Enlaces</h3>
 
-                Sábado
-
-            </p>
-
-            <p>
-
-                8:00 AM - 12:00 PM
-
-            </p>
+            <a href="#inicio">Inicio</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#productos">Productos</a>
+            <a href="#contacto">Contacto</a>
 
         </div>
 
@@ -921,21 +992,25 @@
 
 </footer>
 
-<!-- ==========================================
-          BOTÓN FLOTANTE WHATSAPP
-========================================== -->
+<!--==========================================
+        BOTÓN FLOTANTE WHATSAPP
+===========================================-->
 
-<a
-href="https://wa.me/message/HGVGMG5HMFBRL1"
-target="_blank"
-class="whatsapp">
+<a href="https://wa.me/message/HGVGMG5HMFBRL1"
+   class="whatsapp"
+   target="_blank"
+   aria-label="WhatsApp">
 
-<i class="fa-brands fa-whatsapp"></i>
+    <i class="fa-brands fa-whatsapp"></i>
 
 </a>
+
+<!--==========================================
+                SCRIPT
+===========================================-->
 
 <script src="script.js"></script>
 
 </body>
-
 </html>
+
