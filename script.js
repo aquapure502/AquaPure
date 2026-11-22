@@ -185,6 +185,38 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     /*==========================================
+        DETALLES DESPLEGABLES DE PRODUCTOS
+    ==========================================*/
+
+    const tarjetas = document.querySelectorAll(".card-producto");
+
+    tarjetas.forEach(tarjeta => {
+
+        const ficha = tarjeta.querySelector(".ficha-producto");
+        const imagenTarjeta = tarjeta.querySelector("img");
+
+        if (!ficha || !imagenTarjeta) return;
+
+        const boton = document.createElement("button");
+        boton.type = "button";
+        boton.className = "btn-detalles";
+        boton.setAttribute("aria-expanded", "false");
+        boton.innerHTML = '<span>Ver detalles</span> <i class="fa-solid fa-chevron-down"></i>';
+
+        ficha.before(boton);
+
+        function alternar() {
+            const abierta = tarjeta.classList.toggle("abierta");
+            boton.setAttribute("aria-expanded", abierta);
+            boton.querySelector("span").textContent = abierta ? "Ocultar detalles" : "Ver detalles";
+        }
+
+        boton.addEventListener("click", alternar);
+        imagenTarjeta.addEventListener("click", alternar);
+
+    });
+
+    /*==========================================
             VISOR Y ZOOM DE PRODUCTOS
     ==========================================*/
 
@@ -232,10 +264,21 @@ document.addEventListener("DOMContentLoaded", () => {
         visorImagen.removeAttribute("src");
 
     }
+
     if (visor && visorImagen) {
 
+        // Botón de lupa sobre cada imagen para abrir el zoom
         imagenesProductos.forEach(imagen => {
-            imagen.addEventListener("click", () => abrirVisor(imagen));
+
+            const lupa = document.createElement("button");
+            lupa.type = "button";
+            lupa.className = "btn-zoom";
+            lupa.setAttribute("aria-label", "Ampliar imagen");
+            lupa.innerHTML = '<i class="fa-solid fa-magnifying-glass-plus"></i>';
+            lupa.addEventListener("click", () => abrirVisor(imagen));
+
+            imagen.parentElement.appendChild(lupa);
+
         });
 
         visorCerrar.addEventListener("click", cerrarVisor);

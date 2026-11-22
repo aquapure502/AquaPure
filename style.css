@@ -393,7 +393,7 @@ p{ color:#555; }
     background:#f8fbff;
     padding:25px;
     transition:.4s;
-    cursor:zoom-in;
+    cursor:pointer;
 }
 
 .card-producto:hover img{ transform:scale(1.05); }
@@ -417,11 +417,19 @@ p{ color:#555; }
 .card-producto > p:not(.precio){ flex:none; margin-bottom:18px; }
 
 .card-producto .ficha-producto{
-    flex:1;
+    flex:none;
+    max-height:0;
+    overflow:hidden;
     padding:0 25px;
-    margin-bottom:20px;
+    margin-bottom:0;
     text-align:left;
     font-size:.92rem;
+    transition:max-height .45s ease, margin-bottom .45s ease;
+}
+
+.card-producto.abierta .ficha-producto{
+    max-height:600px;
+    margin-bottom:20px;
 }
 
 .ficha-producto li{
@@ -434,11 +442,62 @@ p{ color:#555; }
 
 .card-producto .precio{
     flex:none;
+    margin-top:auto;
     margin-bottom:20px;
     font-size:1.15rem;
     font-weight:700;
     color:var(--color-principal);
 }
+
+/*--- Botón "Ver detalles" y lupa de zoom ---*/
+
+.card-producto{ position:relative; }
+
+.btn-detalles{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    margin:0 25px 15px;
+    padding:10px 18px;
+    border:2px solid var(--color-borde);
+    border-radius:50px;
+    background:#fff;
+    color:var(--color-principal);
+    font-family:'Poppins',sans-serif;
+    font-weight:600;
+    font-size:.92rem;
+    cursor:pointer;
+    transition:var(--transicion);
+}
+
+.btn-detalles:hover{
+    border-color:var(--color-secundario);
+    color:var(--color-secundario);
+}
+
+.btn-detalles i{ transition:transform var(--transicion); }
+
+.card-producto.abierta .btn-detalles i{ transform:rotate(180deg); }
+
+.btn-zoom{
+    position:absolute;
+    top:14px;
+    right:14px;
+    width:42px;
+    height:42px;
+    border:none;
+    border-radius:50%;
+    background:#fff;
+    color:var(--color-principal);
+    box-shadow:var(--sombra);
+    font-size:1rem;
+    cursor:pointer;
+    transition:var(--transicion);
+    z-index:1;
+}
+
+.btn-zoom:hover{ background:var(--color-principal); color:#fff; }
 
 /*--- Comparativa de ozonos ---*/
 
