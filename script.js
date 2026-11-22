@@ -12,6 +12,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const menuToggle = document.getElementById("menu-toggle");
     const menu = document.getElementById("menu");
 
+    function cerrarMenu() {
+        menu.classList.remove("active");
+        const icono = menuToggle.querySelector("i");
+        icono.classList.remove("fa-xmark");
+        icono.classList.add("fa-bars");
+    }
+
     if (menuToggle && menu) {
 
         menuToggle.addEventListener("click", () => {
@@ -19,34 +26,15 @@ document.addEventListener("DOMContentLoaded", () => {
             menu.classList.toggle("active");
 
             const icono = menuToggle.querySelector("i");
+            const abierto = menu.classList.contains("active");
 
-            if (menu.classList.contains("active")) {
-
-                icono.classList.remove("fa-bars");
-                icono.classList.add("fa-xmark");
-
-            } else {
-
-                icono.classList.remove("fa-xmark");
-                icono.classList.add("fa-bars");
-
-            }
+            icono.classList.toggle("fa-xmark", abierto);
+            icono.classList.toggle("fa-bars", !abierto);
 
         });
 
         document.querySelectorAll(".menu a").forEach(link => {
-
-            link.addEventListener("click", () => {
-
-                menu.classList.remove("active");
-
-                const icono = menuToggle.querySelector("i");
-
-                icono.classList.remove("fa-xmark");
-                icono.classList.add("fa-bars");
-
-            });
-
+            link.addEventListener("click", cerrarMenu);
         });
 
     }
@@ -57,21 +45,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const header = document.getElementById("header");
 
-    window.addEventListener("scroll", () => {
+    if (header) {
 
-        if (window.scrollY > 60) {
+        window.addEventListener("scroll", () => {
 
-            header.style.boxShadow = "0 10px 25px rgba(0,0,0,.10)";
-            header.style.background = "rgba(255,255,255,.98)";
+            if (window.scrollY > 60) {
+                header.style.boxShadow = "0 10px 25px rgba(0,0,0,.10)";
+                header.style.background = "rgba(255,255,255,.98)";
+            } else {
+                header.style.boxShadow = "0 5px 20px rgba(0,0,0,.05)";
+                header.style.background = "rgba(255,255,255,.95)";
+            }
 
-        } else {
+        });
 
-            header.style.boxShadow = "0 5px 20px rgba(0,0,0,.05)";
-            header.style.background = "rgba(255,255,255,.95)";
-
-        }
-
-    });
+    }
 
     /*==========================================
                     FAQ
@@ -86,13 +74,9 @@ document.addEventListener("DOMContentLoaded", () => {
         boton.addEventListener("click", () => {
 
             preguntas.forEach(faq => {
-
                 if (faq !== item) {
-
                     faq.classList.remove("active");
-
                 }
-
             });
 
             item.classList.toggle("active");
@@ -109,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (formulario) {
 
-        formulario.addEventListener("submit", function (e) {
+        formulario.addEventListener("submit", (e) => {
 
             e.preventDefault();
 
@@ -120,28 +104,27 @@ document.addEventListener("DOMContentLoaded", () => {
             const mensaje = document.getElementById("mensaje").value.trim();
 
             if (nombre === "" || telefono === "") {
-
                 alert("Por favor completa tu nombre y número de WhatsApp.");
-
                 return;
-
             }
 
-            let texto =
+            // Se arma con saltos de línea normales y luego se codifica completo.
+            // Así los acentos, emojis y símbolos (&, #, %) no rompen el mensaje.
+            const texto = [
+                "*NUEVA SOLICITUD DE COTIZACIÓN*",
+                "------------------------------------",
+                `👤 *Nombre:* ${nombre}`,
+                `📱 *WhatsApp:* ${telefono}`,
+                `📧 *Correo:* ${correo || "No proporcionado"}`,
+                `💧 *Equipo de interés:* ${equipo}`,
+                `📝 *Mensaje:* ${mensaje || "Sin comentarios"}`,
+                "------------------------------------",
+                "Enviado desde la página web de AquaPure Guatemala."
+            ].join("\n");
 
-`*NUEVA SOLICITUD DE COTIZACIÓN*%0A
-------------------------------------%0A
-👤 *Nombre:* ${nombre}%0A
-📱 *WhatsApp:* ${telefono}%0A
-📧 *Correo:* ${correo || "No proporcionado"}%0A
-💧 *Equipo de interés:* ${equipo}%0A
-📝 *Mensaje:* ${mensaje || "Sin comentarios"}%0A
-------------------------------------%0A
-Enviado desde la página web de AquaPure Guatemala.`;
+            const url = `https://wa.me/50239856332?text=${encodeURIComponent(texto)}`;
 
-            const url = `https://wa.me/50239856332?text=${texto}`;
-
-            window.open(url, "_blank");
+            window.open(url, "_blank", "noopener");
 
             formulario.reset();
 
@@ -157,18 +140,15 @@ Enviado desde la página web de AquaPure Guatemala.`;
 
         ancla.addEventListener("click", function (e) {
 
-            const destino = document.querySelector(this.getAttribute("href"));
+            const id = this.getAttribute("href");
+
+            if (id.length < 2) return;
+
+            const destino = document.querySelector(id);
 
             if (destino) {
-
                 e.preventDefault();
-
-                destino.scrollIntoView({
-
-                    behavior: "smooth"
-
-                });
-
+                destino.scrollIntoView({ behavior: "smooth" });
             }
 
         });
@@ -180,9 +160,7 @@ Enviado desde la página web de AquaPure Guatemala.`;
     ==========================================*/
 
     const elementos = document.querySelectorAll(
-
         ".beneficio, .servicio, .card-producto, .card-mision, .card-vision"
-
     );
 
     const observer = new IntersectionObserver((entries) => {
@@ -190,28 +168,115 @@ Enviado desde la página web de AquaPure Guatemala.`;
         entries.forEach(entry => {
 
             if (entry.isIntersecting) {
-
-                entry.target.style.opacity = "1";
-                entry.target.style.transform = "translateY(0)";
-
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
             }
 
         });
 
-    }, {
-
-        threshold: .15
-
-    });
+    }, { threshold: .15 });
 
     elementos.forEach(el => {
 
-        el.style.opacity = "0";
-        el.style.transform = "translateY(40px)";
-        el.style.transition = ".7s";
+        el.classList.add("reveal");
 
         observer.observe(el);
 
     });
+
+    /*==========================================
+            VISOR Y ZOOM DE PRODUCTOS
+    ==========================================*/
+
+    const visor = document.getElementById("visor-producto");
+    const visorImagen = document.getElementById("visor-imagen");
+    const visorCerrar = document.getElementById("visor-cerrar");
+
+    const zoomMas = document.getElementById("zoom-mas");
+    const zoomMenos = document.getElementById("zoom-menos");
+    const zoomReset = document.getElementById("zoom-reset");
+
+    const imagenesProductos = document.querySelectorAll(".card-producto img");
+
+    const ZOOM_MIN = 0.5;
+    const ZOOM_MAX = 3;
+
+    let escala = 1;
+
+    function actualizarZoom() {
+
+        escala = Math.min(ZOOM_MAX, Math.max(ZOOM_MIN, escala));
+
+        visorImagen.style.transform = `scale(${escala})`;
+        zoomReset.textContent = `${Math.round(escala * 100)}%`;
+
+    }
+
+    function abrirVisor(imagen) {
+
+        visorImagen.src = imagen.src;
+        visorImagen.alt = imagen.alt;
+
+        escala = 1;
+        actualizarZoom();
+
+        visor.classList.add("active");
+        document.body.style.overflow = "hidden";
+
+    }
+
+    function cerrarVisor() {
+
+        visor.classList.remove("active");
+        document.body.style.overflow = "";
+        visorImagen.removeAttribute("src");
+
+    }
+    if (visor && visorImagen) {
+
+        imagenesProductos.forEach(imagen => {
+            imagen.addEventListener("click", () => abrirVisor(imagen));
+        });
+
+        visorCerrar.addEventListener("click", cerrarVisor);
+
+        // Cerrar al hacer clic en el fondo
+        visor.addEventListener("click", (e) => {
+            if (e.target === visor) cerrarVisor();
+        });
+
+        // Cerrar con ESC
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && visor.classList.contains("active")) {
+                cerrarVisor();
+            }
+        });
+
+        zoomMas.addEventListener("click", () => {
+            escala += 0.25;
+            actualizarZoom();
+        });
+
+        zoomMenos.addEventListener("click", () => {
+            escala -= 0.25;
+            actualizarZoom();
+        });
+
+        zoomReset.addEventListener("click", () => {
+            escala = 1;
+            actualizarZoom();
+        });
+
+        // Zoom con la rueda del mouse
+        visorImagen.addEventListener("wheel", (e) => {
+
+            e.preventDefault();
+
+            escala += e.deltaY < 0 ? 0.15 : -0.15;
+            actualizarZoom();
+
+        }, { passive: false });
+
+    }
 
 });
